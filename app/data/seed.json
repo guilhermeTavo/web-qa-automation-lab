@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "email": "qa@example.com",
+      "password": "Playwright123!",
+      "name": "QA User"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Review regression results",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Document checkout defect",
+      "completed": true
+    }
+  ]
+}
