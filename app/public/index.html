@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taskboard QA Demo</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="login-view" class="panel auth-panel">
+      <p class="kicker">Automation target</p>
+      <h1>Taskboard</h1>
+      <p class="muted">A small SaaS-style demo app built specifically for QA automation practice.</p>
+      <form id="login-form">
+        <label>Email<input id="email" name="email" type="email" value="qa@example.com" required /></label>
+        <label>Password<input id="password" name="password" type="password" value="Playwright123!" required /></label>
+        <button type="submit">Sign in</button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="app-view" class="panel hidden">
+      <header class="app-header">
+        <div><p class="kicker">Workspace</p><h1>QA Tasks</h1></div>
+        <button id="logout" class="secondary">Log out</button>
+      </header>
+
+      <form id="task-form" class="task-form">
+        <input id="task-title" aria-label="Task title" placeholder="Add a task" maxlength="80" />
+        <button type="submit">Create task</button>
+      </form>
+      <p id="task-error" class="error" role="alert"></p>
+
+      <div class="filters" aria-label="Task filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-state" class="muted hidden">No tasks in this view.</p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
