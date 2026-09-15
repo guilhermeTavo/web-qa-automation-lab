@@ -6,6 +6,20 @@ A hands-on QA automation portfolio project built with **Playwright + JavaScript*
 
 My previous portfolio projects focus on manual QA, AI Quality, localization, and support triage. This lab adds practical automation evidence: I designed the target application, defined risk-based coverage, automated critical UI and API flows, and documented how failures should be handled.
 
+## Validated execution
+
+The suite was executed locally after stabilizing shared in-memory test state.
+
+| Result | Count |
+| --- | ---: |
+| Passed | 10 |
+| Failed | 0 |
+| Skipped / known defect | 1 |
+| Browser | Chromium |
+| Total runtime | ~5.1s |
+
+The skipped test is intentional: it documents a known duplicate-task defect with `test.fixme()` so the expected behavior remains executable without making the normal suite permanently red.
+
 ## What it demonstrates
 
 - Playwright browser automation
