@@ -4,10 +4,12 @@ module.exports = defineConfig({
   testDir: './tests',
   timeout: 20_000,
   expect: { timeout: 5_000 },
-  fullyParallel: true,
+  // The demo app uses a single in-memory task store shared by UI and API tests.
+  // Running tests serially keeps reset/create/update/delete operations isolated and deterministic.
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }]
